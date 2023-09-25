@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/app_heading"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="130dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tagLine_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="140dp"
+        android:text="@string/tagline" />
+
+    <TextView
+        android:id="@+id/nationalLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/nationalNumLabel" />
+
+    <EditText
+        android:id="@+id/national_editview"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/nameLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/nameLabel" />
+
+    <EditText
+        android:id="@+id/name_editText"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/speciesLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/speciesLabel" />
+
+    <EditText
+        android:id="@+id/species_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/genderLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/GenderLabel" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="-40dp">
+
+        <RadioButton
+            android:id="@+id/female_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/femaleLabel" />
+
+        <RadioButton
+            android:id="@+id/unknown_RB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="-37.5dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/unknownLabel" />
+
+        <RadioButton
+            android:id="@+id/male_RB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="-37.5dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/maleLabel" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/heightLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/HeightLabel" />
+
+    <EditText
+        android:id="@+id/height_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/weightLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/WeightLabel" />
+
+    <EditText
+        android:id="@+id/weight_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/levelLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/levelLabel" />
+
+    <Spinner
+        android:id="@+id/spinner_box"
+        android:layout_width="163dp"
+        android:layout_height="32dp"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-30dp" />
+
+    <TextView
+        android:id="@+id/stats_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/stats_heading"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hpLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/HPLabel" />
+
+    <EditText
+        android:id="@+id/hp_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/attackLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/attackLabel" />
+
+    <EditText
+        android:id="@+id/attack_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="-40dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/defense_editText"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/defenseLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-30dp"
+        android:text="@string/defenseLabel" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="160dp"
+        android:layout_marginVertical="30dp"
+        android:text="@string/resetLabel" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="280dp"
+        android:layout_marginTop="-78dp"
+        android:text="@string/saveLabel" />
+
+</LinearLayout>

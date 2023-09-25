@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tagLine_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:text="@string/tagline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_heading" />
+
+    <TextView
+        android:id="@+id/stats_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/stats_heading"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelLabel_tv" />
+
+    <EditText
+        android:id="@+id/hp_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/stats_heading"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_box"
+        tools:text="@string/zero" />
+
+    <EditText
+        android:id="@+id/defense_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/zero"
+        app:layout_constraintStart_toEndOf="@+id/defenseLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/attack_editText" />
+
+    <TextView
+        android:id="@+id/defenseLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/defenseLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attackLabel_tv" />
+
+    <EditText
+        android:id="@+id/attack_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/attackLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/hp_editText"
+        tools:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/attackLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/attackLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hpLabel_tv" />
+
+    <TextView
+        android:id="@+id/hpLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/HPLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stats_heading" />
+
+    <EditText
+        android:id="@+id/national_editview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/nnDefault"
+        app:layout_constraintStart_toEndOf="@+id/nationalLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/tagLine_tv" />
+
+    <TextView
+        android:id="@+id/speciesLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/speciesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel_tv" />
+
+    <TextView
+        android:id="@+id/weightLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/WeightLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightLabel_tv" />
+
+    <TextView
+        android:id="@+id/genderLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="39dp"
+        android:text="@string/GenderLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speciesLabel_tv" />
+
+
+    <EditText
+        android:id="@+id/species_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/speciesDefault"
+        app:layout_constraintStart_toEndOf="@+id/speciesLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/name_editText" />
+
+    <TextView
+        android:id="@+id/heightLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/HeightLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderLabel_tv" />
+
+    <EditText
+        android:id="@+id/weight_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/weightDefault"
+        app:layout_constraintStart_toEndOf="@+id/weightLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/height_editText" />
+
+    <TextView
+        android:id="@+id/nationalLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="53dp"
+        android:text="@string/nationalNumLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_heading" />
+
+    <TextView
+        android:id="@+id/levelLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/levelLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightLabel_tv" />
+
+    <TextView
+        android:id="@+id/nameLabel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="33dp"
+        android:text="@string/nameLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nationalLabel_tv" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/species_editText">
+
+        <RadioButton
+            android:id="@+id/female_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/femaleLabel" />
+
+        <RadioButton
+            android:id="@+id/unknown_RB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="-37.5dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/unknownLabel" />
+
+        <RadioButton
+            android:id="@+id/male_RB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="-37.5dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/maleLabel" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/height_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/heightDefault"
+        app:layout_constraintStart_toEndOf="@+id/heightLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <EditText
+        android:id="@+id/name_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/nameDefault"
+        app:layout_constraintStart_toEndOf="@+id/nameLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/national_editview" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/resetLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/defense_editText" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/saveLabel"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/defense_editText" />
+
+    <Spinner
+        android:id="@+id/spinner_box"
+        android:layout_width="163dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="25dp"
+        android:entries="@array/values"
+        app:layout_constraintStart_toEndOf="@+id/levelLabel_tv"
+        app:layout_constraintTop_toBottomOf="@+id/weight_editText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

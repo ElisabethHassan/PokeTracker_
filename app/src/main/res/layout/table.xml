@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/app_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tagLine_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:text="@string/tagline"
+        android:textAlignment="center" />
+
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/nationalLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/national_editview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/nameLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/nameLabel" />
+    <EditText
+        android:id="@+id/name_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/speciesLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/speciesLabel" />
+
+
+    <EditText
+        android:id="@+id/species_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/genderLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/GenderLabel" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="260dp"
+            android:layout_height="51dp">
+
+            <RadioButton
+                android:id="@+id/female_RB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/femaleLabel" />
+
+            <RadioButton
+                android:id="@+id/unknown_RB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="-37.5dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/unknownLabel" />
+
+            <RadioButton
+                android:id="@+id/male_RB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="-37.5dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/maleLabel" />
+
+        </RadioGroup>
+
+    </TableRow>
+
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/heightLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/HeightLabel" />
+
+    <EditText
+        android:id="@+id/height_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/weightLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/WeightLabel" />
+
+    <EditText
+        android:id="@+id/weight_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+    </TableRow>
+
+    <TableRow android:layout_marginVertical="10dp">
+
+        <TextView
+            android:id="@+id/levelLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/levelLabel" />
+
+        <Spinner
+            android:id="@+id/spinner_box"
+            android:layout_width="163dp"
+            android:layout_height="32dp" />
+
+    </TableRow>
+
+
+    <TextView
+        android:id="@+id/stats_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:text="@string/stats_heading"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/hpLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/HPLabel" />
+
+    <EditText
+        android:id="@+id/hp_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/attackLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/attackLabel" />
+
+    <EditText
+        android:id="@+id/attack_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/defenseLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/defenseLabel" />
+
+    <EditText
+        android:id="@+id/defense_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        />
+    </TableRow>
+
+    //<TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="-20dp"
+            android:text="@string/resetLabel" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:text="@string/saveLabel" />
+    </TableRow>
+
+
+</TableLayout>
