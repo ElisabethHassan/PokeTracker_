@@ -180,7 +180,8 @@
         <Spinner
             android:id="@+id/spinner_box"
             android:layout_width="163dp"
-            android:layout_height="32dp" />
+            android:layout_height="32dp"
+            android:entries="@array/values" />
 
     </TableRow>
 
