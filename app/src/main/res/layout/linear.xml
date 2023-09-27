@@ -5,6 +5,8 @@
     android:layout_marginVertical="30dp"
     android:orientation="vertical">
 
+
+
     <TextView
         android:id="@+id/app_heading"
         android:layout_width="165dp"
@@ -17,10 +19,19 @@
 
     <TextView
         android:id="@+id/tagLine_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="140dp"
-        android:text="@string/tagline" />
+        android:text="@string/tagline"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/linearView_tv"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="140dp"
+        android:text="@string/linearView"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/nationalLabel_tv"
@@ -37,7 +48,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number"
+        android:text="@string/nnDefault" />
 
     <TextView
         android:id="@+id/nameLabel_tv"
@@ -54,7 +66,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:text="@string/nameDefault" />
 
     <TextView
         android:id="@+id/speciesLabel_tv"
@@ -71,6 +84,7 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
+        android:text="@string/speciesDefault"
         android:inputType="text" />
 
     <TextView
@@ -132,7 +146,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:text="@string/heightDefault"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/weightLabel_tv"
@@ -149,7 +164,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:text="@string/weightDefault"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/levelLabel_tv"
@@ -192,7 +208,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number"
+        android:text="@string/zero" />
 
     <TextView
         android:id="@+id/attackLabel_tv"
@@ -209,7 +226,8 @@
         android:layout_marginHorizontal="180dp"
         android:layout_marginTop="-40dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number"
+        android:text="@string/zero"/>
 
     <EditText
         android:id="@+id/defense_editText"
@@ -217,7 +235,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="180dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="number"
+        android:text="@string/zero"/>
 
     <TextView
         android:id="@+id/defenseLabel_tv"
@@ -234,7 +253,9 @@
         android:layout_height="48dp"
         android:layout_marginHorizontal="160dp"
         android:layout_marginVertical="30dp"
-        android:text="@string/resetLabel" />
+        android:text="@string/resetLabel"
+        android:textColorHighlight="#2196F3"
+        android:textColorLink="#2196F3" />
 
     <Button
         android:id="@+id/save_button"
@@ -243,5 +264,14 @@
         android:layout_marginHorizontal="280dp"
         android:layout_marginTop="-78dp"
         android:text="@string/saveLabel" />
+
+<!--    <Button-->
+<!--        android:id="@+id/switch_button2"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="-60dp"-->
+<!--        android:text="@string/nextLabel" />-->
+
 
 </LinearLayout>

@@ -14,6 +14,7 @@
     <string name="defenseLabel">Defense</string>
     <string name="resetLabel">Reset</string>
     <string name="saveLabel">Save</string>
+    <string name="nextLabel">Change View</string>
     <string name="femaleLabel">Female</string>
     <string name="maleLabel">Male</string>
     <string name="unknownLabel">Unk.</string>
@@ -23,6 +24,10 @@
     <string name="speciesDefault">Wild Horse Pokémon</string>
     <string name="nameDefault">Glastrier</string>
     <string name="nnDefault">896</string>
+    <string name="linearView">Linear View</string>
+    <string name="tableView">Table View</string>
+    <string name="constraintView">Constraint View</string>
+
 
     <string-array name="values">
         <item>1</item>

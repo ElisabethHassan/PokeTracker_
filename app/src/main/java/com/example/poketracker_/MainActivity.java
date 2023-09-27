@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,28 +30,166 @@ public class MainActivity extends AppCompatActivity {
     private TextView hpLabel;
     private TextView attackLabel;
     private TextView defenseLabel;
+    private TextView genderLabel;
+    private TextView spinnerLabel;
     private Spinner spinner;
     private Button saveButton;
     private Button resetButton;
-    private Double hpText;
-    private Double attackText;
-    private Double defenseText;
-    private Double heightText;
-    private Double weightText;
-    boolean isAllFieldsChecked = false;
+    private Button switchButton;
+    private int currentLayout = 1;
+    RadioGroup gender;
 
 
-    View.OnClickListener saveButtonListener = new View.OnClickListener() {
+    View.OnClickListener submitListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            isAllFieldsChecked = checkAllfields();
+            // validate the input fields
+            boolean isValid = true;
 
-            if(isAllFieldsChecked){
-                Toast.makeText(getApplicationContext(), "Successful save! The information was stored in the database", Toast.LENGTH_LONG);
-            } else {
-                Toast.makeText(getApplicationContext(), "Error occurred. Fix inputs in red", Toast.LENGTH_LONG).show();
+            // validate national number
+            String nationalNumStr = nationalNum.getText().toString();
+            try {
+                int nationaln = Integer.parseInt(nationalNumStr);
+                if (nationaln < 0 || nationaln > 1010) {
+                    nationalNumLabel.setTextColor(Color.RED);
+                    isValid = false;
+                } else {
+                    nationalNumLabel.setTextColor(Color.BLACK);
+                }
+                //make sure the input is a number
+            } catch (NumberFormatException e) {
+                nationalNumLabel.setTextColor(Color.RED);
+                isValid = false;
             }
 
+            // Validate Name
+            String nameET = name.getText().toString();
+            boolean isAlphabetical = true;
+
+            if (nameET.isEmpty() || nameET.length() < 3 || nameET.length() > 12) {
+                isAlphabetical = false;
+            } else {
+                for (int i = 0; i < nameET.length(); i++) {
+                    char c = nameET.charAt(i);
+                    if (!Character.isLetter(c)) {
+                        isAlphabetical = false;
+                        break;
+                    }
+                }
+            }
+            //checks that it is in the alphabet
+            if (!isAlphabetical) {
+                nameLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                nameLabel.setTextColor(Color.BLACK);
+            }
+            // validate Species
+            String speciesStr = species.getText().toString();
+            if (speciesStr.isEmpty()) {
+                speciesLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                speciesLabel.setTextColor(Color.BLACK);
+            }
+            // Validate Height
+            String heightStr = height.getText().toString();
+            if (heightStr.endsWith("m")) {
+                heightStr = heightStr.substring(0, heightStr.length() - 1);
+            }
+            if (heightStr.isEmpty() || Double.parseDouble(heightStr) < 0.3 || Double.parseDouble(heightStr) > 19.99) {
+                heightLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                heightLabel.setTextColor(Color.BLACK);
+            }
+            // Validate Weight
+            String weightStr = weight.getText().toString();
+            if (weightStr.endsWith("kg")) {
+                weightStr = weightStr.substring(0, weightStr.length() - 2);
+            }
+            if (weightStr.isEmpty() || Double.parseDouble(weightStr) < 0.1 || Double.parseDouble(weightStr) > 820.00) {
+                weightLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                weightLabel.setTextColor(Color.BLACK);
+            }
+            // Validate HP
+            String hpStr = hp.getText().toString();
+            boolean isHpValid = false;
+            try {
+                int hpET = Integer.parseInt(hpStr);
+                if (hpET >= 1 && hpET <= 362) {
+                    isHpValid = true;
+                }
+            } catch (NumberFormatException e) {
+                hpLabel.setTextColor(Color.RED);
+                isValid = false;
+            }
+            if (!isHpValid) {
+                hpLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                hpLabel.setTextColor(Color.BLACK);
+            }
+            // Validate Attack
+            String attackStr = attack.getText().toString();
+            boolean isAttackValid = false;
+            try {
+                int attackET = Integer.parseInt(attackStr);
+                if (attackET >= 5 && attackET <= 526) {
+                    isAttackValid = true;
+                }
+            } catch (NumberFormatException e) {
+                attackLabel.setTextColor(Color.RED);
+                isValid = false;
+            }
+            if (!isAttackValid) {
+                attackLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                attackLabel.setTextColor(Color.BLACK);
+            }
+            // Validate Defense
+            String defenseStr = defense.getText().toString();
+            boolean isDefenseValid = false;
+            try {
+                int defenseET = Integer.parseInt(defenseStr);
+                if (defenseET >= 5 && defenseET <= 614) {
+                    isDefenseValid = true;
+                }
+            } catch (NumberFormatException e) {
+                defenseLabel.setTextColor(Color.RED);
+                isValid = false;
+            }
+            if (!isDefenseValid) {
+                defenseLabel.setTextColor(Color.RED);
+                isValid = false;
+            } else {
+                defenseLabel.setTextColor(Color.BLACK);
+            }
+            // Validate Level (Spinner)
+            String selectedLevel = spinner.getSelectedItem().toString();
+            if (selectedLevel.isEmpty()) {
+                // You may need to adjust this validation based on Spinner's values
+                isValid = false;
+                spinnerLabel.setTextColor(Color.RED);
+            }
+            // Validate Gender (Radio buttons)
+            int selectedGenderId = gender.getCheckedRadioButtonId();
+            if (selectedGenderId == -1) {
+                isValid = false;
+                genderLabel.setTextColor(Color.RED);
+            } else {
+                genderLabel.setTextColor(Color.BLACK);
+            }
+            if (isValid) {
+                // All checks passed, display a success Toast
+                Toast.makeText(MainActivity.this, "Information stored in the database.", Toast.LENGTH_SHORT).show();
+            } else {
+                // Notify the user about errors via Toast
+                Toast.makeText(MainActivity.this, "Please fix the errors in red.", Toast.LENGTH_SHORT).show();
+            }
         }
     };
 
@@ -60,21 +197,39 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             name.setText("Glastrier");
+            nationalNum.setText("896");
             species.setText("Wild Horse Pokémon");
             weight.setText("2.2");
             height.setText("800.0");
             hp.setText("0");
             attack.setText("0");
             defense.setText("0");
+            nameLabel.setTextColor(Color.BLACK);
+            nationalNumLabel.setTextColor(Color.BLACK);
+            speciesLabel.setTextColor(Color.BLACK);
+            weightLabel.setTextColor(Color.BLACK);
+            heightLabel.setTextColor(Color.BLACK);
+            hpLabel.setTextColor(Color.BLACK);
+            attackLabel.setTextColor(Color.BLACK);
+            defenseLabel.setTextColor(Color.BLACK);
+            genderLabel.setTextColor(Color.BLACK);
         }
     };
+
+//    View.OnClickListener switchLayoutListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            switchLayout();
+//        }
+//    };
+
 
     AdapterView.OnItemSelectedListener spinListener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
             // adapterView.getSelectedItem(); //
-            String message = adapterView.getItemAtPosition(i).toString();
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+//            String message = adapterView.getItemAtPosition(i).toString();
+//            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 
         }
 
@@ -83,24 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-    TextWatcher addMeasures = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            String heightInput = height.getText().toString() + " m";
-            String weightInput = weight.getText().toString() + " kg";
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,68 +266,41 @@ public class MainActivity extends AppCompatActivity {
         defenseLabel = findViewById(R.id.defenseLabel_tv);
         spinner = findViewById(R.id.spinner_box);
         resetButton = findViewById(R.id.button);
+        gender = findViewById(R.id.radioGroup);
         saveButton = findViewById(R.id.save_button);
+        genderLabel = findViewById(R.id.genderLabel_tv);
+        spinnerLabel = findViewById(R.id.levelLabel_tv);
+       // switchButton = findViewById(R.id.switch_button2);
 
 
-        height.addTextChangedListener(addMeasures);
-        weight.addTextChangedListener(addMeasures);
         spinner.setOnItemSelectedListener(spinListener);
         resetButton.setOnClickListener(resetButtonListener);
-        saveButton.setOnClickListener(saveButtonListener);
-
-
-    }
-
-
-    private boolean checkAllfields() {
-//        hpText = Double.parseDouble(hp.getText().toString());
-//        attackText = Double.parseDouble(attack.getText().toString());
-//        defenseText = Double.parseDouble(defense.getText().toString());
-//        heightText = Double.parseDouble(height.getText().toString());
-//        weightText = Double.parseDouble(weight.getText().toString());
-
-        //String nameText = name.getText().toString();
-        //3 <= name.length() && name.length() <= 12
-        if (3 > name.length() || name.length() > 12){
-            nameLabel.setTextColor(Color.RED);
-            return false;
-        }
-
-        //String hpStringtext = editText.getText().toString();
-        //1 <=  hpText && hpText <= 362
-//        if (1 >  hpText || hpText > 362){
-//            hpLabel.setTextColor(Color.RED);
-//            return false;
-//        }
-//
-//        //5 <=  attackText && attackText <= 526
-//        if (5 >  attackText || attackText > 526){
-//            attackLabel.setTextColor(Color.RED);
-//            return false;
-//        }
-//
-//        //5 <=  defenseText && defenseText <= 614
-//        if (5 >  defenseText || defenseText > 614){
-//            defenseLabel.setTextColor(Color.RED);
-//            return false;
-//        }
-//
-//        //0.3 <=  heightText && heightText <= 19.99
-//        if (0.3 >  heightText || heightText > 19.99){
-//            heightLabel.setTextColor(Color.RED);
-//            return false;
-//        }
-//
-//        //0.1 <=  weightText && weightText <= 820.0
-//        if (0.1 >  weightText || weightText > 820.0){
-//            weightLabel.setTextColor(Color.RED);
-//            return false;
-//        }
-
-        return true;
-
-
+        saveButton.setOnClickListener(submitListener);
 
     }
+//
+//    private void switchLayout() {
+//        switch (currentLayout) {
+//            case 1:
+//                setContentView(R.layout.constraint);
+//                currentLayout = 2;
+//                break;
+//            case 2:
+//                setContentView(R.layout.table);
+//                currentLayout = 3;
+//                break;
+//            case 3:
+//                setContentView(R.layout.linear);
+//                currentLayout = 1;
+//                break;
+//            default:
+//                // Handle any unexpected cases here
+//                setContentView(R.layout.constraint);
+//                break;
+//        }
+//    }
+
+
+
 
 }
